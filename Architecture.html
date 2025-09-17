@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueprint for a Real-Time Open-Source Data Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .flow-arrow {
+            position: relative;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .flow-arrow::after {
+            content: '▼';
+            font-size: 2.5rem;
+            color: #444e86;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -1.5rem;
+        }
+        .flow-step {
+            border: 2px solid #444e86;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .flow-step-horizontal {
+            position: relative;
+            flex: 1;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .flow-arrow-horizontal::after {
+            content: '►';
+            font-size: 1.5rem;
+            color: #dd5182;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="text-[#003f5c]">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold text-[#003f5c] mb-4">Architecting the Future</h1>
+            <p class="text-xl md:text-2xl text-[#444e86]">A Blueprint for a Real-Time, Open-Source Data Analytics Platform</p>
+            <p class="mt-4 text-lg">Proposed By: Asif Iqbal Paracha</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 text-center md:col-span-1">
+                <h2 class="text-2xl font-bold text-[#955196] mb-2">The Data Explosion is Real</h2>
+                <p class="text-6xl font-extrabold text-[#dd5182]">2.5</p>
+                <p class="text-xl text-[#444e86] mt-2">Quintillion Bytes of Data Created Daily</p>
+                <p class="mt-4 text-lg">Harnessing this flood of information in real-time is the key to competitive advantage. This infographic outlines a scalable, cost-effective architecture using powerful open-source tools to turn raw data into actionable insights.</p>
+            </div>
+        </div>
+
+        <section class="mt-12">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">Core Architectural Layers</h2>
+            <p class="text-center text-lg max-w-3xl mx-auto mb-10">A modern data platform is built on four distinct layers, each with a specific purpose. Data flows sequentially through these stages, from raw collection to insightful visualization, enabling a robust and scalable system.</p>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flow-step-horizontal">
+                        <div class="text-4xl mb-2">📥</div>
+                        <h3 class="text-xl font-bold text-[#003f5c]">1. Data Ingestion</h3>
+                        <p class="mt-2 text-gray-600">The entry point. Collects and queues high-velocity, high-volume data streams from various sources like applications, logs, and IoT devices.</p>
+                    </div>
+                    <div class="flow-arrow-horizontal hidden md:block"></div>
+                    <div class="flow-arrow md:hidden"></div>
+                    <div class="flow-step-horizontal">
+                        <div class="text-4xl mb-2">💾</div>
+                        <h3 class="text-xl font-bold text-[#444e86]">2. Data Storage</h3>
+                        <p class="mt-2 text-gray-600">Persists the collected data. This layer must be scalable, reliable, and optimized for different access patterns (e.g., batch analytics vs. real-time queries).</p>
+                    </div>
+                    <div class="flow-arrow-horizontal hidden md:block"></div>
+                    <div class="flow-arrow md:hidden"></div>
+                    <div class="flow-step-horizontal">
+                        <div class="text-4xl mb-2">⚙️</div>
+                        <h3 class="text-xl font-bold text-[#955196]">3. Data Processing</h3>
+                        <p class="mt-2 text-gray-600">The brain of the platform. Transforms, enriches, aggregates, and analyzes data, both in real-time streams and in batches.</p>
+                    </div>
+                     <div class="flow-arrow-horizontal hidden md:block"></div>
+                     <div class="flow-arrow md:hidden"></div>
+                    <div class="flow-step-horizontal">
+                        <div class="text-4xl mb-2">📊</div>
+                        <h3 class="text-xl font-bold text-[#dd5182]">4. Visualization & Serving</h3>
+                        <p class="mt-2 text-gray-600">The presentation layer. Exposes insights to end-users through dashboards, reports, and APIs, enabling data-driven decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-12">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">Choosing Your Open-Source Toolkit</h2>
+            <p class="text-center text-lg max-w-3xl mx-auto mb-10">Selecting the right tools is critical for performance and scalability. Here, we compare leading open-source options for each layer of the data platform architecture based on key performance metrics.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#003f5c]">Data Ingestion Tool Comparison</h3>
+                    <p class="text-center mb-6">This chart compares ingestion tools by their message throughput. Apache Kafka is a clear leader for high-volume, real-time streaming scenarios due to its distributed architecture.</p>
+                    <div class="chart-container">
+                        <canvas id="ingestionChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#444e86]">Data Storage Use Case Composition</h3>
+                     <p class="text-center mb-6">Different storage solutions excel at different tasks. This chart illustrates how usage is distributed across common patterns, highlighting the specialization of each tool.</p>
+                    <div class="chart-container">
+                        <canvas id="storageChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#955196]">Data Processing Framework Analysis</h3>
+                    <p class="text-center mb-6">Processing frameworks offer different trade-offs. This radar chart visualizes the strengths of Apache Spark, Flink, and Trino across five critical dimensions for a balanced view.</p>
+                    <div class="chart-container">
+                        <canvas id="processingChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#dd5182]">Data Visualization Tool Ranking</h3>
+                     <p class="text-center mb-6">The final layer presents insights to users. This chart ranks leading open-source visualization tools based on a composite feature score, with Apache Superset leading in flexibility.</p>
+                    <div class="chart-container">
+                        <canvas id="visualizationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mt-12">
+             <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">The Data Flow in Action: A Real-Time Example</h2>
+             <p class="text-center text-lg max-w-3xl mx-auto mb-10">Let's trace the journey of a single piece of data, such as a user click on a website, as it flows through a concrete implementation of our open-source platform to provide immediate analytical value.</p>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0 md:space-x-2">
+                    <div class="flow-step-horizontal bg-blue-50 border-blue-200">
+                        <h3 class="font-bold text-blue-800">1. Event Source</h3>
+                        <p class="text-blue-700 mt-2">User click events from a web application.</p>
+                    </div>
+                    <div class="flow-arrow-horizontal hidden md:block"></div><div class="flow-arrow md:hidden"></div>
+                    <div class="flow-step-horizontal bg-purple-50 border-purple-200">
+                        <h3 class="font-bold text-purple-800">2. Ingestion: Kafka</h3>
+                        <p class="text-purple-700 mt-2">Events are published to a Kafka topic for durable, high-throughput queuing.</p>
+                    </div>
+                    <div class="flow-arrow-horizontal hidden md:block"></div><div class="flow-arrow md:hidden"></div>
+                    <div class="flow-step-horizontal bg-pink-50 border-pink-200">
+                        <h3 class="font-bold text-pink-800">3. Processing: Flink</h3>
+                        <p class="text-pink-700 mt-2">A Flink job consumes the stream, performing real-time aggregations (e.g., clicks per minute).</p>
+                    </div>
+                    <div class="flow-arrow-horizontal hidden md:block"></div><div class="flow-arrow md:hidden"></div>
+                     <div class="flow-step-horizontal bg-orange-50 border-orange-200">
+                        <h3 class="font-bold text-orange-800">4. Storage: ClickHouse</h3>
+                        <p class="text-orange-700 mt-2">The aggregated results are written to ClickHouse, a fast analytical database.</p>
+                    </div>
+                    <div class="flow-arrow-horizontal hidden md:block"></div><div class="flow-arrow md:hidden"></div>
+                    <div class="flow-step-horizontal bg-teal-50 border-teal-200">
+                        <h3 class="font-bold text-teal-800">5. Visualization: Superset</h3>
+                        <p class="text-teal-700 mt-2">A dashboard in Apache Superset queries ClickHouse to display the results in near real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mt-12">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">Key Considerations for a Successful Platform</h2>
+            <p class="text-center text-lg max-w-3xl mx-auto mb-10">Beyond the core tools, several architectural principles are vital for building a platform that is not only powerful but also sustainable, secure, and cost-effective in the long run.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#ff6e54]">Platform Cost Breakdown</h3>
+                    <p class="text-center mb-6">Understanding cost distribution is crucial for budget management. This chart shows a typical allocation, revealing that compute resources often represent the largest expense.</p>
+                    <div class="chart-container">
+                        <canvas id="costChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#ffa600]">Linear Scalability Goal</h3>
+                     <p class="text-center mb-6">A well-architected platform should scale linearly—doubling the nodes should roughly double the capacity. This chart illustrates the ideal relationship between cluster size and processing power.</p>
+                    <div class="chart-container">
+                        <canvas id="scalabilityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="text-center mt-16 py-8 border-t-2 border-[#444e86]">
+            <p class="text-[#003f5c] text-lg">Embrace the power of open-source to build flexible, scalable, and powerful data platforms.</p>
+            <p class="text-gray-500 mt-2">Infographic created for research and educational purposes.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const brilliantBlues = ['#003f5c', '#444e86', '#955196', '#dd5182', '#ff6e54', '#ffa600'];
+        
+        function wrapLabel(label) {
+            const maxLength = 16;
+            if (typeof label !== 'string' || label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('ingestionChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Apache Kafka', 'RabbitMQ', 'Apache Flume', 'Amazon Kinesis'],
+                datasets: [{
+                    label: 'Throughput (Messages/sec)',
+                    data: [2000000, 50000, 15000, 100000],
+                    backgroundColor: brilliantBlues[0],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Messages per Second' }
+                    }
+                },
+                ...tooltipTitleCallback
+            }
+        });
+
+        const storageLabels = ['Hadoop HDFS', 'Apache Cassandra', 'ClickHouse', 'PostgreSQL'].map(wrapLabel);
+        new Chart(document.getElementById('storageChart'), {
+            type: 'bar',
+            data: {
+                labels: storageLabels,
+                datasets: [
+                    { label: 'Batch Analytics', data: [70, 10, 15, 5], backgroundColor: brilliantBlues[1] },
+                    { label: 'NoSQL/Key-Value', data: [5, 60, 5, 10], backgroundColor: brilliantBlues[2] },
+                    { label: 'Real-time Analytics', data: [10, 20, 70, 15], backgroundColor: brilliantBlues[3] },
+                    { label: 'Transactional (OLTP)', data: [5, 10, 10, 70], backgroundColor: brilliantBlues[4] },
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true, title: { display: true, text: 'Use Case Percentage' } }
+                },
+                ...tooltipTitleCallback
+            }
+        });
+
+        new Chart(document.getElementById('processingChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Speed', 'Ease of Use', 'Fault Tolerance', 'Ecosystem', ['Real-time', 'Capability']],
+                datasets: [
+                    { label: 'Apache Spark', data: [8, 7, 9, 10, 7], fill: true, backgroundColor: 'rgba(0, 63, 92, 0.2)', borderColor: brilliantBlues[0], pointBackgroundColor: brilliantBlues[0] },
+                    { label: 'Apache Flink', data: [9, 6, 8, 7, 10], fill: true, backgroundColor: 'rgba(149, 81, 150, 0.2)', borderColor: brilliantBlues[2], pointBackgroundColor: brilliantBlues[2] },
+                    { label: 'Trino (PrestoSQL)', data: [7, 8, 6, 8, 5], fill: true, backgroundColor: 'rgba(255, 110, 84, 0.2)', borderColor: brilliantBlues[4], pointBackgroundColor: brilliantBlues[4] }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...tooltipTitleCallback
+            }
+        });
+
+        new Chart(document.getElementById('visualizationChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Apache Superset', 'Grafana', 'Metabase', 'Kibana'],
+                datasets: [{
+                    label: 'Overall Feature Score',
+                    data: [9.2, 8.8, 8.5, 8.2],
+                    backgroundColor: brilliantBlues[3],
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Score (out of 10)' }
+                    }
+                },
+                ...tooltipTitleCallback
+            }
+        });
+
+        new Chart(document.getElementById('costChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Cloud Compute', 'Cloud Storage', 'Networking', 'Personnel', 'Software Licensing'],
+                datasets: [{
+                    data: [45, 20, 10, 23, 2],
+                    backgroundColor: brilliantBlues,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...tooltipTitleCallback
+            }
+        });
+
+        new Chart(document.getElementById('scalabilityChart'), {
+            type: 'line',
+            data: {
+                labels: ['10 Nodes', '20 Nodes', '30 Nodes', '40 Nodes', '50 Nodes'],
+                datasets: [{
+                    label: 'Processing Capacity (Events/sec)',
+                    data: [100000, 210000, 290000, 405000, 500000],
+                    borderColor: brilliantBlues[5],
+                    backgroundColor: 'rgba(255, 166, 0, 0.2)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Events per Second' }
+                    }
+                },
+                ...tooltipTitleCallback
+            }
+        });
+    </script>
+</body>
+</html>
